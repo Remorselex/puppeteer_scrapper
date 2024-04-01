@@ -70,25 +70,16 @@ async function* processPages(urls, currentIndex = 0, retryCount = 0, saveFileNam
 
 (async function main() {
   try {
-    // for (let i = 0; i < urlsValues.length; i++) {
-    //   const pageIndexes = setPagesCountArray(pagesMap[pagesKeys[i]]);
-    //   const urls = pageIndexes.map(page => `${urlsValues[i]}${page}`);
+    for (let i = 0; i < urlsValues.length; i++) {
+      const pageIndexes = setPagesCountArray(pagesMap[pagesKeys[i]]);
+      const urls = pageIndexes.map(page => `${urlsValues[i]}${page}`);
 
-    //   const parts = [urls, , , pagesKeys[i]];
-    //   for await (const _ of processPages(...parts)) { }
+      const parts = [urls, , , pagesKeys[i]];
+      for await (const _ of processPages(...parts)) { }
 
-    //   console.log(chalk.bold.greenBright('\tFile writing ended successfully',
-    //     chalk.bold.blue(pagesKeys[i])));
-    // }
-
-    const pageIndexes = setPagesCountArray(pagesMap[pagesKeys[9]]);
-    const urls = pageIndexes.map(page => `${urlsValues[9]}${page}`);
-    const parts = [urls, , , pagesKeys[9]];
-    for await (const _ of processPages(...parts)) { }
-
-    console.log(chalk.bold.greenBright('\tFile writing ended successfully',
-      chalk.bold.blue(pagesKeys[9])));
-
+      console.log(chalk.bold.greenBright('\tFile writing ended successfully',
+        chalk.bold.blue(pagesKeys[i])));
+    }
 
     await pageHandler.closeBrowser();
   } catch (err) {
