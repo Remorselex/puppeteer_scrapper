@@ -1,0 +1,24 @@
+{
+  "name": "parserextantion",
+  "version": "1.0.0",
+  "description": "Krisiniye Dvijeniya",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "async": "^3.2.5",
+    "chalk": "^5.3.0",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^22.6.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.24.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-unused-imports": "^3.1.0"
+  }
+}
